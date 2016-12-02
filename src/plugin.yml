@@ -1,0 +1,7 @@
+name: Planets+
+main: us.plpl.planets.plus.main.Main
+authors: [ComputerDude, Justin Brubaker]
+version: 1.0-ALPHA
+commands:
+  planets:
+    description: Planets+ basic command.
