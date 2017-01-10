@@ -2,8 +2,13 @@ package us.plpl.planets.plus.main;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Material;
+import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import us.plpl.planets.plus.items.CustomItems;
+import us.plpl.planets.plus.planets.Planet;
 
 public class Main extends JavaPlugin {
 
@@ -14,6 +19,11 @@ public class Main extends JavaPlugin {
 		@SuppressWarnings("unused")
 		PluginManager pm = Bukkit.getServer().getPluginManager();
 
+		ShapedRecipe spaceHelmRecipe = new ShapedRecipe(CustomItems.getSpaceHelmet()).shape("III", "IGI", "GGG").setIngredient('I', Material.IRON_BLOCK).setIngredient('G', Material.GLASS);
+		getServer().addRecipe(spaceHelmRecipe);
+		
+	pm.registerEvents(new Planet(plugin), this);
+		
 	}
 
 	@Override
