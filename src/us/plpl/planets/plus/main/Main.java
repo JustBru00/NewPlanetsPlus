@@ -8,6 +8,7 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import us.plpl.planets.plus.items.CustomItems;
+import us.plpl.planets.plus.planets.Planet;
 
 public class Main extends JavaPlugin {
 
@@ -20,6 +21,8 @@ public class Main extends JavaPlugin {
 
 		ShapedRecipe spaceHelmRecipe = new ShapedRecipe(CustomItems.getSpaceHelmet()).shape("III", "IGI", "GGG").setIngredient('I', Material.IRON_BLOCK).setIngredient('G', Material.GLASS);
 		getServer().addRecipe(spaceHelmRecipe);
+		
+	pm.registerEvents(new Planet(plugin), this);
 		
 	}
 
